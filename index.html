@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitar Akorları ve Tabları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>Gitar Akorları ve Tabları</h1>
+        <p>En popüler gitar akorları ve tabları:</p>
+        <ul>
+            <li>Akor 1: Am</li>
+            <li>Akor 2: G</li>
+            <li>Akor 3: Dm</li>
+            <li>Akor 4: Em</li>
+            <li>Tab 1: <a href="https://www.gitaregitim.net/unutama-beni-nota-tab/" class="button">Unutama Beni</a></li>
+            <li>Tab 2: <a href="https://www.gitaregitim.net/yorgun-yillarim-gitar-notalari-ve-tab/" class="button">Yorgun Yıllarım</a></li>
+            <li>Tab 3: <a href="https://www.gitaregitim.net/senede-bir-gun-nota-tab/" class="button">Senede Bir Gün</a></li>
+        </ul>
+        <div class="contact-info">
+            <h2><a href="bilgiler.html" class="link">İletişim Bilgileri</a></h2>
+        </div>
+    </div>
+
+    <div id="bilgiler" style="display:none;">
+        <h2>İletişim Bilgileri</h2>
+        <p>Selim Efe İmer</p>
+        <p>Email: <a href="mailto:selimefeimr60@outlook.com">selimefeimr60@outlook.com</a></p>
+        <a href="#" class="back-button" id="back-to-main">Ana Sayfa</a>
+    </div>
+
+    <script>
+        const originalContent = document.querySelector('.container').innerHTML;
+
+        document.querySelector('.link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.container').innerHTML = document.getElementById('bilgiler').innerHTML;
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'back-to-main') {
+                event.preventDefault();
+                document.querySelector('.container').innerHTML = originalContent;
+            }
+        });
+    </script>
+</body>
+</html>
